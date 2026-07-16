@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, type KeyboardEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { Flame, ArrowRight, Truck, Clock, ShieldCheck, MapPin, Search } from 'lucide-react';
 
@@ -113,7 +113,7 @@ export default function LoginPage() {
 
         {/* Top Left Logo */}
         <div className="absolute top-8 left-12 z-20">
-          <a href="/" className="flex flex-col items-start leading-none">
+          <Link to="/" className="flex flex-col items-start leading-none">
             <span className="font-bebas text-[42px] tracking-wider text-[var(--color-brand-yellow)]">
               MA'ONO
             </span>
@@ -185,7 +185,7 @@ export default function LoginPage() {
         
         {/* Mobile Logo fallback */}
         <div className="absolute top-8 left-6 lg:hidden z-20">
-          <a href="/" className="flex flex-col items-start leading-none">
+          <Link to="/" className="flex flex-col items-start leading-none">
             <span className="font-bebas text-[32px] tracking-wider text-[var(--color-brand-yellow)]">MA'ONO</span>
           </a>
         </div>

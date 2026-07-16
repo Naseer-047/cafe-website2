@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ShoppingCart } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useCart } from "../hooks/useCart";
 
@@ -36,22 +36,22 @@ export default function Navbar() {
       <div className="w-full max-w-[1440px] px-6 sm:px-12 lg:px-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/" className="text-[32px] font-bebas text-[var(--color-brand-yellow)] leading-none tracking-wider flex items-center gap-1">
+          <Link to="/" className="text-[32px] font-bebas text-[var(--color-brand-yellow)] leading-none tracking-wider flex items-center gap-1">
            
             <span className="mt-1 lowercase">maono</span>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
 

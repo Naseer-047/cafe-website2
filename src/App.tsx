@@ -10,6 +10,7 @@ import LoginPage from './components/LoginSection/LoginPage'
 import ProductPage from './components/ProductSection/ProductPage'
 import CartPage from './pages/CartPage'
 import CheckoutPage from './pages/CheckoutPage'
+import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import Navbar from './components/Navbar'
 import Toast from './components/ui/Toast'
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
         </Routes>
       </AnimatePresence>
     </div>

@@ -14,6 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { isAuthenticated } = useAuth();
   const { totalItems } = useCart();
@@ -87,8 +88,8 @@ export default function Navbar() {
             </svg>
           </button>
 
-          {/* Mobile Menu Toggle (Decorative for now) */}
-          <button className="lg:hidden text-white ml-2">
+          {/* Mobile Menu Toggle */}
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="lg:hidden text-white ml-2">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -97,6 +98,47 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "100vh" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-0 left-0 w-full h-screen bg-[#050505] z-40 flex flex-col items-center justify-center lg:hidden"
+          >
+            <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-8 right-6 text-white">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <nav className="flex flex-col items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                if (!isAuthenticated) navigate('/login');
+              }}
+              className="mt-12 bg-[var(--color-brand-yellow)] text-black font-bebas text-[28px] px-10 py-4 rounded-xl"
+            >
+              ORDER NOW
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

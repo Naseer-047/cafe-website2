@@ -79,7 +79,7 @@ export default function InstagramFeed() {
       </motion.div>
 
       {/* Reels Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+      <div className="flex sm:grid sm:grid-cols-3 gap-4 sm:gap-6 w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 sm:pb-0 pr-4 sm:pr-0">
         {reels.map((reel) => (
           <ReelCard key={reel.id} {...reel} />
         ))}

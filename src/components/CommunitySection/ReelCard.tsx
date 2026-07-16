@@ -23,7 +23,7 @@ export default function ReelCard({ thumbnail, duration, views, captionWhite, cap
       variants={cardVariants}
       whileHover="hover"
       initial="initial"
-      className="relative w-full aspect-[9/16] bg-[#0B0B0B] border border-[rgba(255,255,255,0.08)] rounded-[22px] overflow-hidden cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
+      className="relative w-[75vw] sm:w-full flex-shrink-0 snap-center aspect-[9/16] bg-[#0B0B0B] border border-[rgba(255,255,255,0.08)] rounded-[22px] overflow-hidden cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.8)]"
     >
       {/* Thumbnail Wrapper */}
       <motion.div 

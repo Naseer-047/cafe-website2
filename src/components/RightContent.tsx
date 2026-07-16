@@ -11,7 +11,7 @@ export default function RightContent() {
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1.05, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative z-20 w-[95%] max-w-[680px] lg:w-[125%] lg:max-w-[1000px] max-h-[50vh] lg:max-h-[75vh] flex justify-center -ml-0 lg:-ml-[10%]"
+        className="relative z-20 w-[140%] sm:w-[95%] lg:w-[125%] max-w-[500px] sm:max-w-[680px] lg:max-w-[1000px] max-h-[60vh] sm:max-h-[50vh] lg:max-h-[75vh] flex justify-center -ml-0 lg:-ml-[10%]"
       >
         <motion.img
           src={`${import.meta.env.BASE_URL}burger.png`}

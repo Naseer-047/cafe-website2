@@ -13,7 +13,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "hawaiian",
     category: "BURGERS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "HAWAIIAN BURGER",
     description: "Crispy chicken, grilled pineapple, slaw, spicy mayo, brioche bun.",
     price: "₹249",
@@ -22,7 +22,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "spicy",
     category: "BURGERS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "SPICY FIRE BURGER",
     description: "Crispy chicken, jalapeños, spicy mayo, lettuce, brioche bun.",
     price: "₹259",
@@ -31,7 +31,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "classic",
     category: "BURGERS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "CLASSIC BURGER",
     description: "Crispy chicken, lettuce, pickles, ma'ono sauce, brioche bun.",
     price: "₹199"
@@ -39,7 +39,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "double",
     category: "BURGERS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "DOUBLE CHEESE BURGER",
     description: "Double crispy chicken, cheese, pickles, onions, ma'ono sauce.",
     price: "₹299"
@@ -47,7 +47,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "bbq",
     category: "BURGERS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "SMOKEHOUSE BBQ",
     description: "Crispy chicken, onion rings, cheddar, smoky BBQ sauce.",
     price: "₹279"
@@ -57,7 +57,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "wings-6",
     category: "CHICKEN",
-    image: "/combo for cart section.png",
+    image: `${import.meta.env.BASE_URL}combo for cart section.png`,
     title: "6 PCS CRISPY WINGS",
     description: "Golden fried chicken wings tossed in your choice of sauce.",
     price: "₹199",
@@ -66,7 +66,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "tenders-4",
     category: "CHICKEN",
-    image: "/combo for cart section.png",
+    image: `${import.meta.env.BASE_URL}combo for cart section.png`,
     title: "4 PCS CHICKEN TENDERS",
     description: "Juicy, boneless chicken tenders served with honey mustard.",
     price: "₹229"
@@ -74,7 +74,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "bucket",
     category: "CHICKEN",
-    image: "/combo for cart section.png",
+    image: `${import.meta.env.BASE_URL}combo for cart section.png`,
     title: "FAMILY BUCKET",
     description: "12 pcs mixed chicken, perfect for sharing with family.",
     price: "₹699",
@@ -85,7 +85,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "fries-reg",
     category: "FRIES & SIDES",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "CLASSIC FRIES",
     description: "Crispy golden french fries salted to perfection.",
     price: "₹99"
@@ -93,7 +93,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "fries-loaded",
     category: "FRIES & SIDES",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "LOADED CHEESE FRIES",
     description: "Fries topped with melted cheese, jalapeños, and special sauce.",
     price: "₹179",
@@ -102,7 +102,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "onion-rings",
     category: "FRIES & SIDES",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "CRISPY ONION RINGS",
     description: "Thick cut onion rings battered and fried until golden.",
     price: "₹129"
@@ -112,7 +112,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "cola",
     category: "DRINKS",
-    image: "/combo for cart section.png",
+    image: `${import.meta.env.BASE_URL}combo for cart section.png`,
     title: "COCA COLA",
     description: "Chilled classic cola beverage (330ml).",
     price: "₹60"
@@ -120,7 +120,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "lemonade",
     category: "DRINKS",
-    image: "/combo for cart section.png",
+    image: `${import.meta.env.BASE_URL}combo for cart section.png`,
     title: "FRESH LEMONADE",
     description: "House-made refreshing lemonade with mint.",
     price: "₹89",
@@ -129,7 +129,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "shake",
     category: "DRINKS",
-    image: "/combo for cart section.png",
+    image: `${import.meta.env.BASE_URL}combo for cart section.png`,
     title: "CHOCOLATE SHAKE",
     description: "Thick chocolate milkshake topped with whipped cream.",
     price: "₹149"
@@ -139,7 +139,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "sundae",
     category: "DESSERTS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "CARAMEL SUNDAE",
     description: "Vanilla soft serve layered with rich caramel sauce.",
     price: "₹119"
@@ -147,7 +147,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "brownie",
     category: "DESSERTS",
-    image: "/burger.png",
+    image: `${import.meta.env.BASE_URL}burger.png`,
     title: "FUDGE BROWNIE",
     description: "Warm, gooey chocolate fudge brownie.",
     price: "₹129",

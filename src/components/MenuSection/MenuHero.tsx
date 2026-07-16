@@ -78,7 +78,7 @@ export default function MenuHero() {
         <div className="relative w-full max-w-[700px] h-full flex items-center justify-center lg:justify-end">
           {/* Main Combo Image instead of individual pieces since missing fries/drink */}
           <motion.img 
-            src="/combo for cart section.png" 
+            src={`${import.meta.env.BASE_URL}combo for cart section.png`} 
             alt="Ma'ono Combo" 
             className="relative z-20 w-full h-auto max-h-[100%] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] scale-100 lg:scale-110 origin-center lg:origin-right"
             initial={{ y: 20 }}

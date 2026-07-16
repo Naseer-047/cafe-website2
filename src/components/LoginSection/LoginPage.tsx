@@ -131,7 +131,7 @@ export default function LoginPage() {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <img 
-            src="/combo for cart section.png" 
+            src={`${import.meta.env.BASE_URL}combo for cart section.png`} 
             alt="Ma'ono Combo" 
             className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] scale-110 origin-center"
             onError={(e) => { e.currentTarget.src = "/burger.png"; }}

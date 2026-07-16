@@ -11,10 +11,10 @@ import Navbar from '../components/Navbar';
 import { useUiStore } from '../store/uiStore';
 
 const recommendations = [
-  { id: 'rec-1', title: 'Cheesy Fries', price: '₹149', image: '/burger.png' }, // reusing burger for demo, can change to fries if exist
-  { id: 'rec-2', title: 'Peri Peri Burger', price: '₹199', image: '/burger.png' },
-  { id: 'rec-3', title: 'Chicken Nuggets (6pc)', price: '₹129', image: '/combo for cart section.png' },
-  { id: 'rec-4', title: 'Chocolate Milkshake', price: '₹129', image: '/combo for cart section.png' }
+  { id: 'rec-1', title: 'Cheesy Fries', price: '₹149', image: `${import.meta.env.BASE_URL}burger.png` }, // reusing burger for demo, can change to fries if exist
+  { id: 'rec-2', title: 'Peri Peri Burger', price: '₹199', image: `${import.meta.env.BASE_URL}burger.png` },
+  { id: 'rec-3', title: 'Chicken Nuggets (6pc)', price: '₹129', image: `${import.meta.env.BASE_URL}combo for cart section.png` },
+  { id: 'rec-4', title: 'Chocolate Milkshake', price: '₹129', image: `${import.meta.env.BASE_URL}combo for cart section.png` }
 ];
 
 export default function CartPage() {

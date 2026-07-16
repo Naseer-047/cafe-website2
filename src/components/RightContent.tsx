@@ -14,7 +14,7 @@ export default function RightContent() {
         className="relative z-20 w-[95%] max-w-[680px] lg:w-[125%] lg:max-w-[1000px] max-h-[50vh] lg:max-h-[75vh] flex justify-center -ml-0 lg:-ml-[10%]"
       >
         <motion.img
-          src="/burger.png"
+          src={`${import.meta.env.BASE_URL}burger.png`}
           alt="Handcrafted Fried Chicken Burger"
           loading="lazy"
           className="w-full h-auto object-contain drop-shadow-[0_30px_30px_rgba(0,0,0,0.7)]"

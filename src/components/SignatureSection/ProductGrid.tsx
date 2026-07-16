@@ -7,7 +7,7 @@ const products = [
     title: "HAWAIIAN BURGER",
     description: "Crispy chicken, pineapple, lettuce, signature sauce.",
     price: "249",
-    image: "/burger.png", // Use the user's uploaded local asset for the signature burger
+    image: `${import.meta.env.BASE_URL}burger.png`, // Use the user's uploaded local asset for the signature burger
     isBestseller: true,
   },
   {

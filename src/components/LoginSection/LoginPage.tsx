@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, KeyboardEvent } from 'react';
+import { useState, useEffect, useRef, type KeyboardEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -291,7 +291,7 @@ export default function LoginPage() {
                       {otp.map((digit, idx) => (
                         <input
                           key={idx}
-                          ref={(el) => (otpRefs.current[idx] = el)}
+                          ref={(el) => { otpRefs.current[idx] = el; }}
                           type="text"
                           maxLength={1}
                           value={digit}

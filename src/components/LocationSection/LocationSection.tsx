@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import LocationList from "./LocationList";
 import InteractiveMap from "./InteractiveMap";

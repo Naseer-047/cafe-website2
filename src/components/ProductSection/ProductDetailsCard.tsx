@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Heart, Star, Minus, Plus } from 'lucide-react';
 import type { MenuItem } from '../../data/menu';
 import { useCart } from '../../hooks/useCart';

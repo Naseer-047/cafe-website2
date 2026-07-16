@@ -1,7 +1,6 @@
 import Navbar from "../Navbar";
 import CategoryTabs from "./CategoryTabs";
 import MenuGrid from "./MenuGrid";
-import ComboBanner from "./ComboBanner";
 import { useState } from "react";
 
 export default function MenuPage() {

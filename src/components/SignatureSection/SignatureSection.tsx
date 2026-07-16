@@ -1,18 +1,15 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import ProductGrid from "./ProductGrid";
 import ViewMenuButton from "./ViewMenuButton";
 
-const containerVariants = {
-  hidden: { opacity: 0, y: 50 },
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeOut",
-      when: "beforeChildren",
       staggerChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };

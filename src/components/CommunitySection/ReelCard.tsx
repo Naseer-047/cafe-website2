@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { Play } from 'lucide-react';
 
 interface ReelCardProps {
   thumbnail: string;
@@ -8,9 +9,13 @@ interface ReelCardProps {
   captionYellow: string;
 }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
 };
 
 export default function ReelCard({ thumbnail, duration, views, captionWhite, captionYellow }: ReelCardProps) {

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Clock, MapPin, PenLine } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../hooks/useCart';

@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import ReviewCarousel from "./ReviewCarousel";
 import InstagramFeed from "./InstagramFeed";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
@@ -11,7 +11,7 @@ const containerVariants = {
       duration: 0.8,
       ease: "easeOut",
       when: "beforeChildren",
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };

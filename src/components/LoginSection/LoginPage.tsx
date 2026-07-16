@@ -120,7 +120,7 @@ export default function LoginPage() {
             <span className="font-bebas text-[18px] tracking-[0.2em] text-white -mt-2">
               FRIED CHICKEN
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* Main Composition */}
@@ -187,7 +187,7 @@ export default function LoginPage() {
         <div className="absolute top-8 left-6 lg:hidden z-20">
           <Link to="/" className="flex flex-col items-start leading-none">
             <span className="font-bebas text-[32px] tracking-wider text-[var(--color-brand-yellow)]">MA'ONO</span>
-          </a>
+          </Link>
         </div>
 
         <motion.div 

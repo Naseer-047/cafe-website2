@@ -82,7 +82,10 @@ export default function LeftContent() {
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
         </button>
-        <button className="flex items-center justify-center gap-2 bg-transparent border-2 border-[var(--color-brand-yellow)] text-[var(--color-brand-yellow)] font-bebas tracking-wider text-[22px] sm:text-[26px] px-8 py-3 sm:py-4 rounded-[12px] hover:bg-[var(--color-brand-yellow)] hover:text-black transition-all duration-300 pt-[16px] pb-[12px] sm:pt-[20px] sm:pb-[16px] h-17">
+        <button 
+          onClick={() => navigate('/menu')}
+          className="flex items-center justify-center gap-2 bg-transparent border-2 border-[var(--color-brand-yellow)] text-[var(--color-brand-yellow)] font-bebas tracking-wider text-[22px] sm:text-[26px] px-8 py-3 sm:py-4 rounded-[12px] hover:bg-[var(--color-brand-yellow)] hover:text-black transition-all duration-300 pt-[16px] pb-[12px] sm:pt-[20px] sm:pb-[16px] h-17"
+        >
           VIEW MENU
         </button>
       </motion.div>

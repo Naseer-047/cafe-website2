@@ -1,5 +1,4 @@
 import { motion, type Variants } from "framer-motion";
-import { Play } from 'lucide-react';
 
 interface ReelCardProps {
   thumbnail: string;

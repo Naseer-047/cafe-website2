@@ -3,9 +3,26 @@ import { Plus } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { menuItems } from "../../data/menu";
 import type { MenuItem } from "../../data/menu";
+import { useCart } from "../../hooks/useCart";
 
 function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
   const navigate = useNavigate();
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const priceNum = parseInt(item.price.replace(/[^0-9]/g, ''), 10);
+    addToCart({
+      id: item.id,
+      productId: item.id,
+      title: item.title,
+      image: item.image,
+      basePrice: priceNum,
+      quantity: 1,
+      spiceLevel: "Medium",
+      extras: []
+    });
+  };
 
   return (
     <motion.div 
@@ -40,12 +57,10 @@ function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
         </p>
         <div className="flex justify-between items-end mt-auto pt-3">
           <span className="font-bebas text-[#F4B400] text-[26px] tracking-wide leading-none">
-            ₹{item.price}
+            {item.price}
           </span>
           <button 
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
+            onClick={handleAddToCart}
             className="w-9 h-9 bg-[#F4B400] rounded-[8px] flex items-center justify-center text-black shadow-[0_4px_10px_rgba(244,180,0,0.3)]"
           >
             <Plus size={22} strokeWidth={2.5} />
@@ -71,12 +86,10 @@ function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
       {/* PC PRICE & ADD (Hidden on Mobile) */}
       <div className="hidden sm:flex flex-col items-end gap-3 shrink-0">
         <span className="font-bebas text-[#F4B400] text-[34px] tracking-wide leading-none">
-          ₹{item.price}
+          {item.price}
         </span>
         <button 
-          onClick={(e) => {
-            e.stopPropagation(); 
-          }}
+          onClick={handleAddToCart}
           className="w-12 h-12 border border-[#F4B400] rounded-[8px] flex items-center justify-center text-[#F4B400] hover:bg-[#F4B400] hover:text-black transition-colors duration-300 group-hover:shadow-[0_0_15px_rgba(244,180,0,0.3)]"
         >
           <Plus size={24} strokeWidth={2.5} />

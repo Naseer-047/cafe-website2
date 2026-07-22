@@ -1,6 +1,9 @@
 import { motion, type Variants } from "framer-motion";
+import { useCart } from "../../hooks/useCart";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
+  id?: string;
   image: string;
   title: string;
   description: string;
@@ -13,9 +16,33 @@ const cardVariants: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-export default function ProductCard({ image, title, description, price, isBestseller }: ProductCardProps) {
+export default function ProductCard({ id, image, title, description, price, isBestseller }: ProductCardProps) {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const priceNum = parseInt(price.replace(/[^0-9]/g, ''), 10);
+    addToCart({
+      id: id || title.toLowerCase().replace(/\s+/g, '-'),
+      productId: id || title.toLowerCase().replace(/\s+/g, '-'),
+      title: title,
+      image: image,
+      basePrice: priceNum,
+      quantity: 1,
+      spiceLevel: "Medium",
+      extras: []
+    });
+  };
+
+  const handleCardClick = () => {
+    if (id) {
+      navigate(`/product/${id}`);
+    }
+  };
   return (
     <motion.div
+      onClick={handleCardClick}
       variants={cardVariants}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
@@ -54,17 +81,20 @@ export default function ProductCard({ image, title, description, price, isBestse
         
         <div className="flex items-end justify-between mt-auto">
           <div className="font-bebas text-[var(--color-brand-yellow)] text-[32px] sm:text-[36px] leading-none">
-            <span className="text-[20px] sm:text-[24px] mr-1">₹</span>{price}
+            {price}
           </div>
           
-          <div className="w-[48px] h-[48px] rounded-full border-2 border-[var(--color-brand-yellow)] text-[var(--color-brand-yellow)] flex items-center justify-center transition-all duration-300 group-hover:bg-[var(--color-brand-yellow)] group-hover:text-black">
+          <button 
+            onClick={handleAddToCart}
+            className="w-[48px] h-[48px] rounded-full border-2 border-[var(--color-brand-yellow)] text-[var(--color-brand-yellow)] flex items-center justify-center transition-all duration-300 group-hover:bg-[var(--color-brand-yellow)] group-hover:text-black cursor-pointer z-20 relative"
+          >
             <motion.svg 
               width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
               className="transition-transform duration-300 group-hover:rotate-90"
             >
               <path d="M12 5v14M5 12h14"/>
             </motion.svg>
-          </div>
+          </button>
         </div>
       </div>
     </motion.div>

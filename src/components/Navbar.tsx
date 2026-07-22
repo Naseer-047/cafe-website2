@@ -46,13 +46,23 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
-            >
-              {link.name}
-            </Link>
+            link.href.startsWith('/#') ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -77,7 +87,7 @@ export default function Navbar() {
               if (!isAuthenticated) {
                 navigate('/login');
               } else {
-                // Future: open cart or go to checkout
+                navigate('/menu');
               }
             }}
             className="hidden sm:flex items-center justify-center gap-2 bg-[var(--color-brand-yellow)] text-black font-bebas tracking-wider text-[20px] sm:text-[24px] px-8 py-3 rounded-[12px] hover:-translate-y-[3px] hover:shadow-[0_15px_35px_rgba(246,196,67,0.25)] transition-all duration-300 shadow-[0_4px_14px_rgba(246,196,67,0.2)] pt-[14px] pb-[10px]"
@@ -117,20 +127,32 @@ export default function Navbar() {
             </button>
             <nav className="flex flex-col items-center gap-8">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
-                >
-                  {link.name}
-                </Link>
+                link.href.startsWith('/#') ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
             </nav>
             <button 
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 if (!isAuthenticated) navigate('/login');
+                else navigate('/menu');
               }}
               className="mt-12 bg-[var(--color-brand-yellow)] text-black font-bebas text-[28px] px-10 py-4 rounded-xl"
             >

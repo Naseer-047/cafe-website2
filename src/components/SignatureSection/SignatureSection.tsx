@@ -16,7 +16,7 @@ const containerVariants: Variants = {
 
 export default function SignatureSection() {
   return (
-    <section className="relative w-full min-h-screen bg-[#050505] py-[120px] flex items-center justify-center overflow-hidden">
+    <section id="about" className="relative w-full min-h-screen bg-[#050505] py-[120px] flex items-center justify-center overflow-hidden">
       
       {/* 2% SVG Noise Texture */}
       <div 

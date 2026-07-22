@@ -14,7 +14,25 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import Navbar from './components/Navbar'
 import Toast from './components/ui/Toast'
 
+import { useEffect } from 'react';
+
 function LandingPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [location.hash]);
+
   return (
     <>
       <Navbar />

@@ -46,23 +46,13 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
-            link.href.startsWith('/#') ? (
-              <a
-                key={link.name}
-                href={link.href}
-                className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
-              >
-                {link.name}
-              </a>
-            ) : (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
-              >
-                {link.name}
-              </Link>
-            )
+            <Link
+              key={link.name}
+              to={link.href}
+              className="font-bebas tracking-wide text-[20px] sm:text-[24px] text-white hover:text-[var(--color-brand-yellow)] transition-colors duration-300 mt-1"
+            >
+              {link.name}
+            </Link>
           ))}
         </nav>
 
@@ -127,25 +117,14 @@ export default function Navbar() {
             </button>
             <nav className="flex flex-col items-center gap-8">
               {navLinks.map((link) => (
-                link.href.startsWith('/#') ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.name}
-                    to={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                )
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="font-bebas text-[36px] text-white hover:text-[var(--color-brand-yellow)] transition-colors"
+                >
+                  {link.name}
+                </Link>
               ))}
             </nav>
             <button 

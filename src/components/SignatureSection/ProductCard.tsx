@@ -1,5 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { useCart } from "../../hooks/useCart";
+import { useUiStore } from "../../store/uiStore";
 import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
@@ -18,6 +19,7 @@ const cardVariants: Variants = {
 
 export default function ProductCard({ id, image, title, description, price, isBestseller }: ProductCardProps) {
   const { addToCart } = useCart();
+  const { showToast } = useUiStore();
   const navigate = useNavigate();
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -33,6 +35,7 @@ export default function ProductCard({ id, image, title, description, price, isBe
       spiceLevel: "Medium",
       extras: []
     });
+    showToast(`Added ${title} to cart`);
   };
 
   const handleCardClick = () => {

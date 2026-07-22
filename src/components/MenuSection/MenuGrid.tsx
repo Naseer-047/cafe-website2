@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { menuItems } from "../../data/menu";
 import type { MenuItem } from "../../data/menu";
 import { useCart } from "../../hooks/useCart";
+import { useUiStore } from "../../store/uiStore";
 
 function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { showToast } = useUiStore();
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -22,6 +24,7 @@ function MenuItemCard({ item, index }: { item: MenuItem; index: number }) {
       spiceLevel: "Medium",
       extras: []
     });
+    showToast(`Added ${item.title} to cart`);
   };
 
   return (
